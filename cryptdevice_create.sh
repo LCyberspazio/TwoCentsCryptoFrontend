@@ -114,16 +114,39 @@ case $? in
   1)
     echo "No chosen.";;
   255)
-    echo "ESC pressed.";;
+    echo "ESC pressed. Exiting!"
+    exit 0;;
 esac
 
+#encryption strength choice
+dialog --clear --title "Cypher" \
+        --menu "Choose your favorite cypher" 20 61 4 \
+        "aes-cbc-essiv:sha256"  "Low Security/Fast" \
+        "twofish-cbc-essiv:sha256" "Good Security/Slow" \
+        "serpent-cbc-essiv:sha256"  "High Security/Very Slow" 2> /tmp/tccf.cryptdevice.temp.wakawaka
+retval=$?
+cipher=$(cat /tmp/tccf.cryptdevice.temp.wakawaka)
+rm /tmp/tccf.cryptdevice.temp.wakawaka
+
+case $retval in
+  0)
+    echo "'$cipher' is your favorite cypher";;
+  1)
+    echo "Cancel pressed."
+    exit 0;;
+  255)
+    echo "ESC pressed."
+    exit 0;;
+esac
+
+#finally create the encrypted volume
 echo
 echo "Defining loop device"
 losetup $LOOP_DEV $fnamevol
 echo "Formatting as luks volume"
-cryptsetup -s 256 -y luksFormat $LOOP_DEV
+cryptsetup -c $cipher -s 256 -y luksFormat $LOOP_DEV
 echo
-echo "Opening the device"
+echo "Please, reinsert the password one more time"
 cryptsetup luksOpen $LOOP_DEV $CRYPT_NAME
 echo
 echo "Formatting the crypt device as FAT32"
@@ -134,5 +157,5 @@ cryptsetup luksClose /dev/mapper/$CRYPT_NAME
 losetup -d $LOOP_DEV
 
 dialog --title "Yatta!!!" --clear \
-       --msgbox "Device successfully encrypted.\nHave a secure day!" 10 50
+       --msgbox "Device successfully encrypted.\nHave a nice and secure day!\nyou have used TCCF by Giovanni Santostefano" 10 50
 clear
