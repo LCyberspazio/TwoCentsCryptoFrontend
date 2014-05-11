@@ -19,7 +19,7 @@ MPOINT=$HOME/tccf_cryptvol
 
 #encryption strength choice
 dialog --clear --title "Container Encrypt Module" \
-        --menu "Choose your activiry" 20 60 4 \
+        --menu "Choose your activiry" 12 60 4 \
         "Device"  "Encrypt Device or partition" \
         "Storage" "Create and encrypted storage in a file" \
         "Mount"  "Mount encrypted device/file" 2> /tmp/tccf.cryptdevice.temp.wakawaka
