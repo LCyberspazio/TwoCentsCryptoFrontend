@@ -31,9 +31,13 @@ case $retval in
     then
         clear
         bash tccf_gpg_symmetric_mod.sh
+    elif [[ $action =~ "RSA" ]]
+    then
+        clear
+        bash tccf_gpg_asymmetric_mod.sh
     else
         clear
-        #bash cryptstorage_mount.sh
+        #for future implementations
     fi
     echo "'$action'";;
   1)
