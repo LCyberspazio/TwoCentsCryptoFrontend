@@ -16,4 +16,5 @@ Many of the programs requires root privileges.
 
 USAGE
 launch
-$ bash tccf_device_mod.sh
+
+$ bash tccf.sh
