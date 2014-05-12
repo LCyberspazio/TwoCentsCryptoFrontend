@@ -11,7 +11,8 @@ dialog --clear --title "Asymmetric Encrypt Module" \
         "Keygen"  "Generate a key pair" \
         "AddKey"  "Add someone's public key to keyring" \
         "Encrypt"  "Encrypt file with someone's public key" \
-        "Decrypt" "Decrypt file with your private key" 2> /tmp/tccf.cryptdevice.temp.wakawaka
+        "Decrypt" "Decrypt file with your private key" \
+        "Sign" "Apply a digital signature to a file" 2> /tmp/tccf.cryptdevice.temp.wakawaka
 retval=$?
 action=$(cat /tmp/tccf.cryptdevice.temp.wakawaka)
 rm /tmp/tccf.cryptdevice.temp.wakawaka
@@ -34,6 +35,10 @@ case $retval in
     then
         clear
         bash gpg_asymmetric_dec.sh
+    elif [[ $action =~ "Sign" ]]
+    then
+        clear
+        bash gpg_asymmetric_sign.sh
     else
         clear
         echo "eventually add..."

@@ -10,7 +10,7 @@ Two Cents Crypto Frontend provides easy to use guided wizards to many of GNU/Lin
 Actually implemented
 * cryptsetup suite to create and manage devices and storages protected by encryption
 * gpg suite for symmetric encryption of files
-* RSA asymmetric encryption tools (implemented in part)
+* RSA asymmetric encryption tools
 
 WARNING
 This suite is highly sperimental. Use it at your own risk!
