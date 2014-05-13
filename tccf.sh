@@ -13,10 +13,11 @@ dialog --title "[ TCCF ]" --clear \
 
 #encryption strength choice
 dialog --clear --title "Module Selection" \
-        --menu "Choose your activiry" 10 60 4 \
+        --menu "Choose your activiry" 15 60 5 \
         "Storage"  "Manage storage encryption" \
         "File" "Encrypt/Decrypt single files with password" \
-        "RSA"  "Manage asymmetric encryption" 2> /tmp/tccf.cryptdevice.temp.wakawaka
+        "RSA"  "Manage asymmetric encryption" \
+        "Wipe" "Secure deletion of disks" 2> /tmp/tccf.cryptdevice.temp.wakawaka
 retval=$?
 action=$(cat /tmp/tccf.cryptdevice.temp.wakawaka)
 rm /tmp/tccf.cryptdevice.temp.wakawaka
@@ -35,6 +36,10 @@ case $retval in
     then
         clear
         bash tccf_gpg_asymmetric_mod.sh
+    elif [[ $action =~ "Wipe" ]]
+    then
+        clear
+        bash tccf_wipe_mod.sh
     else
         clear
         #for future implementations

@@ -11,6 +11,7 @@ Actually implemented
 * cryptsetup suite to create and manage devices and storages protected by encryption
 * gpg suite for symmetric encryption of files
 * RSA asymmetric encryption tools
+* Device and file secure deletion (wiping)
 
 WARNING
 This suite is highly sperimental. Use it at your own risk!

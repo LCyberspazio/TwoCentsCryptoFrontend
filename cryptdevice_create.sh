@@ -54,7 +54,7 @@ clear
 #please give me root
 if [ $(id -u) != 0 ]; then
    echo "This script requires root permissions"
-   echo "So, if you don't want root on the system"
+   echo "So, if you don't want to root on the system"
    echo "use sudo or some other shit"
    exit 9
 fi
