@@ -23,8 +23,6 @@ fi
 
 
 clear
-
-clear
 #enter the filename
 sourcefile=`dialog --stdout --title "Select the file to encrypt" --fselect $HOME/ 14 58`
 
