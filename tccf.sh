@@ -10,6 +10,9 @@
 
 MPOINT=$HOME/tccf_cryptvol
 
+while :
+do
+
 clear
 dialog --title "[ TCCF ]" --clear \
        --msgbox "Two Cents Crypto Frontend\n An easy to use set of cryptographic frontends developed by Giovanni Santostefano.\n Use it to easly perform encryption tasks.\n\n Visit http://twocentssecurity.wordpress.com for more info about computer security." 15 50
@@ -56,3 +59,5 @@ case $retval in
     echo "ESC pressed."
     exit 0;;
 esac
+
+done
