@@ -1,9 +1,12 @@
 #! /bin/bash
 
-#Two Cents Crypto Frontend Copyright (C) 2014  Giovanni Santostefano
+#
+#Two Cents Crypto Frontend 0.1 - Copyright (C) 2014  Giovanni Santostefano
 #This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 #This is free software, and you are welcome to redistribute it
 #under certain conditions; type `show c' for details.
+#
+# Two Cents Crypto Frontend 0.2 - 2014 Software edited and modified by Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 MPOINT=$HOME/tccf_cryptvol
 
@@ -13,10 +16,10 @@ dialog --title "[ TCCF ]" --clear \
 
 #encryption strength choice
 dialog --clear --title "Module Selection" \
-        --menu "Choose your activiry" 15 60 5 \
+        --menu "Choose your activity" 15 60 5 \
         "Storage"  "Manage storage encryption" \
         "File" "Encrypt/Decrypt single files with password" \
-        "RSA"  "Manage asymmetric encryption" \
+        "GPG"  "Manage asymmetric encryption/signature" \
         "Wipe" "Secure deletion of disks" 2> /tmp/tccf.cryptdevice.temp.wakawaka
 retval=$?
 action=$(cat /tmp/tccf.cryptdevice.temp.wakawaka)
