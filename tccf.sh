@@ -15,7 +15,7 @@ do
 
 clear
 dialog --title "[ TCCF ]" --clear \
-       --msgbox "Two Cents Crypto Frontend\n An easy to use set of cryptographic frontends developed by Giovanni Santostefano.\n Use it to easly perform encryption tasks.\n\n Visit http://twocentssecurity.wordpress.com for more info about computer security." 15 50
+       --msgbox "Two Cents Crypto Frontend\n An easy to use set of cryptographic frontends developed by Giovanni Santostefano.\nContributor: Lorenzo \"EclipseSpark\" Faletra\n\n Use it to easly perform encryption tasks.\n\n Visit http://twocentssecurity.wordpress.com for more info about computer security." 15 50
 
 #encryption strength choice
 dialog --clear --title "Module Selection" \
@@ -23,7 +23,8 @@ dialog --clear --title "Module Selection" \
         "Storage"  "Manage storage encryption" \
         "File" "Encrypt/Decrypt single files with password" \
         "GPG"  "Manage asymmetric encryption/signature" \
-        "Wipe" "Secure deletion of disks" 2> /tmp/tccf.cryptdevice.temp.wakawaka
+        "Wipe" "Secure deletion of disks" \
+        "Quit" "Exit from TCCF"  2> /tmp/tccf.cryptdevice.temp.wakawaka
 retval=$?
 action=$(cat /tmp/tccf.cryptdevice.temp.wakawaka)
 rm /tmp/tccf.cryptdevice.temp.wakawaka
@@ -38,7 +39,7 @@ case $retval in
     then
         clear
         bash tccf_gpg_symmetric_mod.sh
-    elif [[ $action =~ "RSA" ]]
+    elif [[ $action =~ "GPG" ]]
     then
         clear
         bash tccf_gpg_asymmetric_mod.sh
@@ -46,6 +47,10 @@ case $retval in
     then
         clear
         bash tccf_wipe_mod.sh
+    elif [[ $action =~ "Quit" ]]
+    then
+        clear
+        exit 0
     else
         clear
         #for future implementations

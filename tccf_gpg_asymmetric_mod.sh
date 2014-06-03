@@ -9,12 +9,11 @@
 # Two Cents Crypto Frontend 0.2 - 2014 Software edited and modified by Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 
-
 #encryption strength choice
 dialog --clear --title "Asymmetric Encrypt Module" \
         --menu "Choose your activity" 15 60 6 \
-        "keyring" "Display your PUBLIC Keys Address Book" \
-        "Keyring" "Display your PRIVATE Keys available" /
+        "Keyring" "Display your PUBLIC Keys Address Book" \
+        "PKring" "Display your PRIVATE Keys available" \
         "AddKey"  "Add someone's public key to keyring" \
         "Genkey"  "Generate a new key pair" \
         "Encrypt"  "Encrypt file with someone's public key" \
@@ -36,14 +35,14 @@ case $retval in
     then
         clear
         bash gpg_asymmetric_addpub.sh
-    elif [[ $action =~ "keyring" ]]
-    then
-        clear
-        bash gpg_asymmetric_keyring.sh
     elif [[ $action =~ "Keyring" ]]
     then
         clear
-        bash gpg_asymmetric_Keyring.sh
+        bash gpg_asymmetric_keyring.sh
+    elif [[ $action =~ "PKring" ]]
+    then
+        clear
+        bash gpg_asymmetric_private_keyring.sh
     elif [[ $action =~ "Encrypt" ]]
     then
         clear
