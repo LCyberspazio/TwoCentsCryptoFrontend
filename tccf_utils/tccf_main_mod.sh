@@ -10,15 +10,15 @@
 
 MPOINT=$HOME/tccf_cryptvol
 
+
+
 while :
 do
 
 clear
-dialog --title "[ TCCF ]" --clear \
-       --msgbox "Two Cents Crypto Frontend\n An easy to use set of cryptographic frontends developed by Giovanni Santostefano.\nContributor: Lorenzo \"EclipseSpark\" Faletra\n\n Use it to easly perform encryption tasks.\n\n Visit http://twocentssecurity.wordpress.com for more info about computer security." 15 50
 
 #encryption strength choice
-dialog --clear --title "Module Selection" \
+dialog --clear --title "TCCF Module Selection" \
         --menu "Choose your activity" 15 60 5 \
         "Storage"  "Manage storage encryption" \
         "File" "Encrypt/Decrypt single files with password" \
