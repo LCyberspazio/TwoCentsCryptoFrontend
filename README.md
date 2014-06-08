@@ -2,15 +2,15 @@ TwoCentsCryptoFrontend
 ======================
 
 GNU/Linux cryptography frontend
-developed by Giovanni Santostefano
+Developed by Giovanni Santostefano <giovannisantostefano@email.it>
 http://twocentssecurity.wordpress.com/
 
 Two Cents Crypto Frontend provides easy to use guided wizards to many of GNU/Linux Cryptography resources like Cryptsetup, GnuPG and so on.
 
 Actually implemented
-* cryptsetup suite to create and manage devices and storages protected by encryption
+* cryptsetup suite to create and manage devices and file storages protected by encryption
 * gpg suite for symmetric encryption of files
-* RSA asymmetric encryption tools
+* gpg asymmetric encryption tools/key management/digital signing
 * Device and file secure deletion (wiping)
 
 WARNING
@@ -20,4 +20,7 @@ Many of the programs requires root privileges.
 USAGE
 launch
 
-$ bash tccf.sh
+$ bash tccf
+
+CONTRIBUTORS
+Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
