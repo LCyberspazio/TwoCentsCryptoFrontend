@@ -23,7 +23,7 @@ fi
 
 clear
 #Public key displayer
-gpg -k 2> ~/tccf.cryptdevice.temp.wakawaka
+gpg -k > ~/tccf.cryptdevice.temp.wakawaka
 fold -w 70 -s ~/tccf.cryptdevice.temp.wakawaka > ~/tccf.cryptdevice.temp.wakawaka1
 dialog --title "Public Address Book" --textbox ~/tccf.cryptdevice.temp.wakawaka1 22 70
 rm ~/tccf.cryptdevice.temp.wakawaka
