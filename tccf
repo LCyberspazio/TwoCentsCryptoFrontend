@@ -1,15 +1,16 @@
 #! /bin/bash
 
 #
-#Two Cents Crypto Frontend 0.1 - Copyright (C) 2014  Giovanni Santostefano
+#Two Cents Crypto Frontend - Copyright (C) 2014 Giovanni Santostefano
 #This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 #This is free software, and you are welcome to redistribute it
 #under certain conditions; type `show c' for details.
 #
-# Two Cents Crypto Frontend 0.2 - 2014 Software edited and modified by Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
+# Developer: Giovanni Santostefano <giovannisantostefano@email.it>
+# Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 clear
-dialog --title "[ TCCF v0.3 ]" --clear \
+dialog --title "[ _-' TCCF v0.3 '-_ ]" --clear \
        --msgbox "Two Cents Crypto Frontend\n An easy to use set of cryptographic frontends developed by Giovanni Santostefano.\nContributor: Lorenzo \"EclipseSpark\" Faletra\n\n Use it to easly perform encryption tasks.\n\n Visit http://twocentssecurity.wordpress.com for more info about computer security." 15 50
 
 cd tccf_utils/

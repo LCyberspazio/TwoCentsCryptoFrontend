@@ -1,9 +1,13 @@
 #! /bin/bash
 
-#Two Cents Crypto Frontend Copyright (C) 2014  Giovanni Santostefano
+#
+#Two Cents Crypto Frontend - Copyright (C) 2014 Giovanni Santostefano
 #This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 #This is free software, and you are welcome to redistribute it
 #under certain conditions; type `show c' for details.
+#
+# Developer: Giovanni Santostefano <giovannisantostefano@email.it>
+# Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 #encryption strength choice
 dialog --clear --title "Secure deletion" \

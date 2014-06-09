@@ -1,12 +1,13 @@
 #! /bin/bash
 
 #
-#Two Cents Crypto Frontend 0.1 - Copyright (C) 2014 Giovanni Santostefano
+#Two Cents Crypto Frontend - Copyright (C) 2014 Giovanni Santostefano
 #This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 #This is free software, and you are welcome to redistribute it
 #under certain conditions; type `show c' for details.
 #
-# Two Cents Crypto Frontend 0.2 - 2014 Software edited and modified by Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
+# Developer: Giovanni Santostefano <giovannisantostefano@email.it>
+# Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 
 #encryption submenu
@@ -53,8 +54,8 @@ PKSignature(){
         "Sign" "Apply a detached signature to a file" \
         "Verify" "Verify a detached signature with the file" \
         "---" "-----------------------------------" \
-        "CSign" "Apply a digital signature to a txt file" \
-        "TVer" "Verify a txt message digitally signed" 2> /tmp/tccf.cryptdevice.temp.wakawaka
+        "Csign" "Apply a digital signature to a txt file" \
+        "Tver" "Verify a txt message digitally signed" 2> /tmp/tccf.cryptdevice.temp.wakawaka
     
     retval=$?
     action=$(cat /tmp/tccf.cryptdevice.temp.wakawaka)
@@ -70,11 +71,11 @@ PKSignature(){
         then
             clear
             bash gpg_asymmetric_verify.sh
-        elif [[ $action =~ "CSign" ]]
+        elif [[ $action =~ "Csign" ]]
         then
             clear
             bash gpg_asymmetric_clear_sign.sh
-        elif [[ $action =~ "TVer" ]]
+        elif [[ $action =~ "Tver" ]]
         then
             clear
             bash gpg_asymmetric_clear_verify.sh

@@ -22,5 +22,5 @@ launch
 
 $ bash tccf
 
-CONTRIBUTORS
+CONTRIBUTORS: 
 Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>

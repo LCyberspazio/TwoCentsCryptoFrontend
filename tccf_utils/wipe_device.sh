@@ -1,19 +1,13 @@
 #! /bin/bash
 
-#Two Cents Crypto Frontend Copyright (C) 2014  Giovanni Santostefano
+#
+#Two Cents Crypto Frontend - Copyright (C) 2014 Giovanni Santostefano
 #This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 #This is free software, and you are welcome to redistribute it
 #under certain conditions; type `show c' for details.
-
-#Cryptstorage allow the user to create, mount and unmount
-#an encrypted storage maintained in a file!
-#Beware! It requires always root privileges!
-
-#THIS SCRIPT CAN SERIOUSLY DAMAGE YOUR SYSTEM!
-#USE IT AT YOUR OWN RISK!
-#HOW CAN I SAY YOU... IF THIS FUCK YOUR SYSTEM
-#THIS IS YOUR ONLY PROBLEM! 
-#NO COSPIRACY ;)
+#
+# Developer: Giovanni Santostefano <giovannisantostefano@email.it>
+# Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 dialog --title "Wipe Device" --clear \
        --msgbox "Secure deletion of all the data of a device" 10 30
