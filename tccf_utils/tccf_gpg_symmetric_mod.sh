@@ -11,9 +11,10 @@
 
 #encryption strength choice
 dialog --clear --title "File Symmetric Encrypt Module" \
-        --menu "Choose your activity" 10 60 3 \
+        --menu "Choose your activity" 10 60 4 \
         "Encrypt"  "Encrypt file with password" \
-        "Decrypt" "Decrypt file with password" 2> /tmp/tccf.cryptdevice.temp.wakawaka
+        "Decrypt" "Decrypt file with password" \
+        "Sdir" "Encrypt directory recursively" 2> /tmp/tccf.cryptdevice.temp.wakawaka
 retval=$?
 action=$(cat /tmp/tccf.cryptdevice.temp.wakawaka)
 rm /tmp/tccf.cryptdevice.temp.wakawaka
@@ -28,6 +29,10 @@ case $retval in
     then
         clear
         bash gpg_symmetric_dec.sh
+    elif [[ $action =~ "Sdir" ]]
+    then
+        clear
+        bash gpg_symmetric_dir_enc.sh
     else
         clear
         echo "eventually add..."
