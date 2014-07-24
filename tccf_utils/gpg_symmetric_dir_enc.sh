@@ -55,6 +55,21 @@ case $? in
         exit 0;;
 esac
 
+clear
+dialog --title " Directory Encryption " \
+        --yesno "Are you sure to encrypt and delete all the data in $sourcedir ?" 10 30
+
+case $? in
+  0)
+    echo "Let's go!";;
+  1)
+    echo "No chosen. Exiting"
+    exit 1;;
+  255)
+    echo "ESC pressed. Exiting!"
+    exit 1;;
+esac
+
 #password entry
 clear
 echo "Enter the passphrase. Strong!"
