@@ -77,7 +77,7 @@ read -s  passphrase
 
 clear
 #finding the list of files in the directory
-FILES=`find $sourcedir/ -name \*`
+FILES=`find -P $sourcedir/ -name \* -type f`
 echo "Encrypting..."
 for file in $FILES
 do
