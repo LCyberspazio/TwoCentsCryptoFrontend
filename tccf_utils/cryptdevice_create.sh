@@ -113,8 +113,8 @@ case $? in
 esac
 
 #encryption strength choice
-dialog --clear --title "Cypher" \
-        --menu "Choose your favorite cypher" 20 61 4 \
+dialog --clear --title "Cipher" \
+        --menu "Choose your favorite cipher" 20 61 4 \
         "aes-cbc-essiv:sha256"  "Low Security/Fast" \
         "twofish-cbc-essiv:sha256" "Good Security/Slow" \
         "serpent-cbc-essiv:sha256"  "High Security/Very Slow" 2> /tmp/tccf.cryptdevice.temp.wakawaka

@@ -1,0 +1,39 @@
+#! /bin/bash
+
+#
+#Two Cents Crypto Frontend - Copyright (C) 2014 Giovanni Santostefano
+#This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+#This is free software, and you are welcome to redistribute it
+#under certain conditions; type `show c' for details.
+#
+# Developer: Giovanni Santostefano <giovannisantostefano@email.it>
+# Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
+
+
+if [ -e $1 ]
+then
+  echo "file exists"
+else
+  echo
+  echo
+  echo "ERROR!!!"
+  echo "File not found!"
+  exit 11
+fi
+
+
+echo "starting wiping"
+SIZ=$(stat -c%s $1)
+raw=0
+while (($raw < 2)); do
+    echo
+    echo "Wiping $1, it will be a clean job"
+    echo "$raw of 2 passes done"
+    dd if=/dev/zero of=$1 bs=$SIZ count=1
+    dd if=/dev/urandom of=$1 bs=$SIZ count=1
+    raw=$(($raw+1))
+done
+echo
+echo "overwrite done!"
+echo "deleting file"
+rm $1

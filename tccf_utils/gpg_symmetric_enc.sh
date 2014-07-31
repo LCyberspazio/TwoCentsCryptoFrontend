@@ -41,10 +41,32 @@ case $? in
         exit 0;;
 esac
 
+#encryption strength choice
+dialog --clear --title "Cipher" \
+        --menu "Choose your favorite cipher" 20 61 4 \
+        "cast5"  "GPG default cipher" \
+        "aes256" "US standard cipher" \
+        "twofish"  "Two Fish cipher" 2> /tmp/tccf.cryptdevice.temp.wakawaka
+retval=$?
+cipher=$(cat /tmp/tccf.cryptdevice.temp.wakawaka)
+rm /tmp/tccf.cryptdevice.temp.wakawaka
+
+case $retval in
+  0)
+    echo "'$cipher' is your favorite cypher";;
+  1)
+    echo "Cancel pressed."
+    exit 0;;
+  255)
+    echo "ESC pressed."
+    exit 0;;
+esac
+
+
 
 clear
 echo "Encrypting..."
-gpg -c --armor $sourcefile
+gpg --symmetric --cipher $cipher --armor $sourcefile
 echo 
 echo
 dialog --title "GOOD BYE!" --clear \
