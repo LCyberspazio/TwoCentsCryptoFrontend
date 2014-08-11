@@ -1,0 +1,44 @@
+TWO CENTS CRYPTO FRONTEND 
+Security risks
+
+Read carefully this document. Here are reported many security issues that may
+happen using TCCF.
+TCCF is designed to make simple many encryption taks but some of them are not
+secure to be used in multiuser environments or systems where you haven't the 
+full control.
+
+* GPG Encrypted Text File Edit
+  -To perform the clear file edit, the script needs to pass the passphrase
+   once as command parameter.
+   This way the passphrase is visible in the top(1) screen or in the ps(1) 
+   output.
+   If someone can access to these commands on the system, then can steal
+   your password!
+  -To edit the file, in the same directory of the encrypted file, a clear
+   text temporary file is created with the name 
+   [name of the encrypted file].temp.wawa
+   This file will be securely removed after edit task ends but until then
+   root can access to this file anytime!
+
+* GPG Symetric Directory Decryption
+  Decrypt all the files of a directory with gpg automatically. To accomplish
+  this taks, the program needs to pass the passphrase as a parameter.
+  This way the passphrase is visible in the top(1) screen or in the ps(1) 
+  output.
+  If someone can access to these commands on the system, then can steal
+  your password!
+
+* GPG Symetric Directory Encryption
+  Encrypt all the files of a directory with gpg automatically. To accomplish
+  this taks, the program needs to pass the passphrase as a parameter.
+  This way the passphrase is visible in the top(1) screen or in the ps(1) 
+  output.
+  If someone can access to these commands on the system, then can steal
+  your password!
+
+* Temporary files
+  Many scripts of TCCF uses text clear temporary files. For 90% of the tasks
+  these files only contains menu choices or other informations not related
+  to the content.
+  These files are stored mainly in /tmp directory. Remember that having /tmp
+  encrypted is always a safe choice.
