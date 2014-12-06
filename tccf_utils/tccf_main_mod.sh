@@ -20,10 +20,11 @@ clear
 
 #encryption strength choice
 dialog --clear --title "TCCF Module Selection" \
-        --menu "Choose your activity" 15 60 5 \
+        --menu "Choose your activity" 16 60 6 \
         "Storage"  "Manage storage encryption" \
         "File" "Encrypt/Decrypt single files with password" \
         "GPG"  "Manage asymmetric encryption/signature" \
+        "Message" "Messaging utilities module" \
         "Wipe" "Secure deletion of disks" \
         "Quit" "Exit from TCCF"  2> /tmp/tccf.cryptdevice.temp.wakawaka
 retval=$?
@@ -44,6 +45,10 @@ case $retval in
     then
         clear
         bash tccf_gpg_asymmetric_mod.sh
+    elif [[ $action =~ "Message" ]]
+    then
+        clear
+        bash tccf_message_mod.sh
     elif [[ $action =~ "Wipe" ]]
     then
         clear

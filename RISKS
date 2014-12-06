@@ -7,6 +7,11 @@ TCCF is designed to make simple many encryption taks but some of them are not
 secure to be used in multiuser environments or systems where you haven't the 
 full control.
 
+* Shor Message encryption utilities
+  Passphrases are passed in clear as a parameter of GPG, so this may be a
+  problem on multiuser systems.
+  Use it only on systems where you are the only user.
+
 * GPG Encrypted Text File Edit
   -To perform the clear file edit, the script needs to pass the passphrase
    once as command parameter.

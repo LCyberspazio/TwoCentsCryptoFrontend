@@ -11,6 +11,8 @@ Actually implemented
 * cryptsetup suite to create and manage devices and file storages protected by encryption
 * gpg suite for symmetric encryption of files and directory trees
 * gpg asymmetric encryption tools/key management/digital signing
+* Encrypted short message utilities
+* One Time Pad generation to securely exchange with contacts to have private conversations
 * Device and file secure deletion (wiping)
 
 
