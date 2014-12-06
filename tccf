@@ -10,7 +10,7 @@
 # Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 clear
-dialog --title "[ _-' TCCF v0.3 '-_ ]" --clear \
+dialog --title "[ _-' TCCF v0.3.1 '-_ ]" --clear \
        --msgbox "Two Cents Crypto Frontend\n An easy to use set of cryptographic frontends developed by Giovanni Santostefano.\nContributor: Lorenzo \"EclipseSpark\" Faletra\n\n Use it to easly perform encryption tasks.\n\n Visit http://twocentssecurity.wordpress.com for more info about computer security." 15 50
 
 cd tccf_utils/
