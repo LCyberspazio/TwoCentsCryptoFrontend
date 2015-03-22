@@ -10,6 +10,8 @@
 # Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 #encryption strength choice
+while :
+do
 dialog --clear --title "Encrypted Messaging module" \
         --menu "Choose your activity" 10 60 3 \
         "Encrypt"  "Encrypt short text AES" \
@@ -86,3 +88,4 @@ case $retval in
     echo "ESC pressed."
     exit 0;;
 esac
+done
