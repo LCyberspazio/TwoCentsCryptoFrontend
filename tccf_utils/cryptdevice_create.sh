@@ -9,7 +9,7 @@
 # Developer: Giovanni Santostefano <giovannisantostefano@email.it>
 # Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
-LOOP_DEV=/dev/loop0
+LOOP_DEV=`losetup -f` #find the first free loop device and set it
 CRYPT_NAME=gscryptstorage
 
 dialog --title "Encrypt Device" --clear \
