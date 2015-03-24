@@ -10,6 +10,8 @@
 # Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 #encryption strength choice
+while :
+do
 dialog --clear --title "Secure deletion" \
         --menu "Choose your activity" 10 60 3 \
         "Device"  "Wipe out a device" \
@@ -41,3 +43,4 @@ case $retval in
     echo "ESC pressed."
     exit 0;;
 esac
+done
