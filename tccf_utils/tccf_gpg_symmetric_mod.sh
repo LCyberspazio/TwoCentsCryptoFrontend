@@ -10,6 +10,8 @@
 # Contributor: Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>
 
 #encryption strength choice
+while :
+do
 dialog --clear --title "File Symmetric Encrypt Module" \
         --menu "Choose your activity" 16 60 6 \
         "Encrypt"  "Encrypt file with password" \
@@ -56,3 +58,4 @@ case $retval in
     echo "ESC pressed."
     exit 0;;
 esac
+done
