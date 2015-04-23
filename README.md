@@ -2,8 +2,12 @@ TwoCentsCryptoFrontend
 ======================
 
 GNU/Linux cryptography frontend
+
 Developed by Giovanni Santostefano <giovannisantostefano@email.it>
+
 http://twocentssecurity.wordpress.com/
+
+
 
 Two Cents Crypto Frontend provides easy to use guided wizards to many of GNU/Linux Cryptography resources like Cryptsetup, GnuPG and so on.
 
@@ -39,9 +43,12 @@ not responsible for any data loss due to uncorrect usage or bugs of this functio
 ========================
 
 USAGE
+
 launch
 
 $ bash tccf
 
+=======================
 CONTRIBUTORS: 
+
 Lorenzo "EclipseSpark" Faletra <eclipse@frozenbox.org>

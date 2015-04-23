@@ -103,7 +103,7 @@ case $? in
     echo "Randomizing volume data"
     echo "Take a coffee... it will take long time"
     echo "on 2GB usb2 volume it may take half an hour"
-    dd if=/dev/urandom of=$fnamevol
+    dd if=/dev/urandom of=$fnamevol bs=8M
     echo "Volume random filled";;
   1)
     echo "No chosen.";;
