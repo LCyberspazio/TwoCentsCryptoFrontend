@@ -51,7 +51,7 @@ case $retval in
         echo
         while :
 	do
-		echo "Write the message and press [CTRL+D] to encrypt"
+		echo "Write the message and press [CTRL+D] to decrypt"
 		gpg -d --passphrase $pass 2> /dev/null
 		echo
 	done
